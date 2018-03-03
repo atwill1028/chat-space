@@ -15,8 +15,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false|
-|email|string|null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
+|mail|string|null: false|
 
 ### Association
 - has_many :groups, through: :members
@@ -27,7 +27,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :members
@@ -38,10 +38,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|string||
 |image|string||
-|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreigh_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
