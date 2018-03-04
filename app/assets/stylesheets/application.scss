@@ -1,0 +1,7 @@
+@import "reset";
+@import "./config/variable";
+.top-message{
+  background-color: $mainBlueColor;
+  text-align: center;
+  color: $mainWhiteColor;
+}
