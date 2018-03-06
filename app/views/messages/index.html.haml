@@ -1,3 +1,74 @@
 .contents
   .top-message
     チャットグループが作成されました。
+  .left-group
+    .left-group__user-contents
+      .left-group__user-name
+        SampleUser
+      %a{ :class => "left-group__user--new", :href => "/groups/new"}
+        %i.fa.fa-pencil-square-o
+      %a{ :class => "left-group__user--edit", :href => "/users/edit"}
+        %i.fa.fa-cog
+    .left-group__group-contents
+      .left-group__group-content
+        .left-group__group-name
+          SampleGroup
+        .left-group__group-talk
+          まだメッセージはありません
+        .left-group__group-name
+          SampleGroup2
+        .left-group__group-talk
+          まだメッセージはありません
+        .left-group__group-name
+          SampleGroup3
+        .left-group__group-talk
+          まだメッセージはありません
+  .talk
+    .header
+      .left-header
+        .left-header__name
+          sample
+        .left-header__member
+          Member:SampleUser
+      .right-header
+        .right-header-button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__name
+            userA
+          .upper-message__time
+            2016/10/02 12:34:56
+        .bottom-message
+          .bottom-message__comment
+            AAA
+      .message
+        .upper-message
+          .upper-message__name
+            userB
+          .upper-message__time
+            2017/10/02 12:34:56
+        .bottom-message
+          .bottom-message__comment
+            BBB
+      .message
+        .upper-message
+          .upper-message__name
+            userC
+          .upper-message__time
+            2018/10/02 12:34:56
+        .bottom-message
+          .bottom-message__comment
+            CCC
+    .form
+      .left-form
+        .left-form__input
+          .left-form__input-message
+            type a message
+          .left-form__input-picture
+            %i.fa.fa-picture-o.icon
+      .right-form
+        .right-form__submit
+          .right-form__submit-button
+            Send
