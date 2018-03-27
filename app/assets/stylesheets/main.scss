@@ -30,22 +30,33 @@ html,body{
       .left-group__user--edit{
         color: $mainWhiteColor;
       }
+      a{
+         .icon{
+          color: $mainWhiteColor;
+        }
+      }
     }
     .left-group__group-contents{
       padding-left: 20px;
       padding-right: 20px;
       background-color: #2f3e5a;
-      height: calc(100vh - 124px);
+      height: calc(100vh - 100px);
       .left-group__group-content{
         color: $mainWhiteColor;
-        .left-group__group-name{
-          padding-top: 20px;
-          font-size: 15px;
-          padding-bottom: 5px;
-        }
-        .left-group__group-talk{
-          font-size: 11px;
-          padding-bottom: 40px;
+        a{
+          text-decoration: none;
+          .left-group__group-name{
+            text-decoration: none;
+            color: $mainWhiteColor;
+            padding-top: 20px;
+            font-size: 15px;
+            padding-bottom: 5px;
+          }
+          .left-group__group-talk{
+            color: $mainWhiteColor;
+            font-size: 11px;
+            padding-bottom: 40px;
+          }
         }
       }
     }
@@ -85,8 +96,10 @@ html,body{
       }
     }
     .messages{
+      overflow: scroll;
       clear: both;
-      height: calc(100vh - 260px);
+      box-sizing: border-box;
+      height: calc(100vh - 100px - 90px);
       background-color: #FAFAFA;
       padding-right: 40px;
       padding-left: 40px;
