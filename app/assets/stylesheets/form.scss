@@ -1,0 +1,45 @@
+.form{
+  background-color: #DDDDDD;
+  height: 90px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  form{
+    .display: block;
+    .form__message{
+      height: 50px;
+      color: $mainBlackColor;
+      border: none;
+      box-sizing: border-box;
+      width: calc(100% - 150px);
+      float: left;
+    }
+    .form__mask{
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      width: 20px;
+      background-color: $mainWhiteColor;
+      .form__mask__image{
+        width: 20px;
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden{
+        display: none;
+      }
+    }
+    .form__submit{
+      border: none;
+      float: right;
+      background-color: $mainBlueColor;
+      color: $mainWhiteColor;
+      padding-right: 30px;
+      padding-left: 30px;
+      height: 50px;
+      margin-left: 15px;
+    }
+  }
+}
