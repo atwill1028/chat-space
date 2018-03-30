@@ -1,0 +1,18 @@
+.left-group
+  .left-group__user-contents
+    .left-group__user-name
+      =current_user.name
+    %a.left-group__user--new
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'icon'
+    %a.left-group__user--edit
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'icon'
+  .left-group__group-contents
+    .left-group__group-content
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .left-group__group-name
+            = group.name
+          .left-group__group-talk
+            = group.show_last_message

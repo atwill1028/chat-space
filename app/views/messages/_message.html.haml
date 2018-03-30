@@ -1,0 +1,11 @@
+.message
+  .upper-message
+    .upper-message__name
+      = message.user.name
+    .upper-message__time
+      = format_posted_time(message.created_at)
+  .bottom-message
+    - if message.content.present?
+      %p.bottom-message__comment
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
