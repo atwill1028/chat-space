@@ -1,12 +1,19 @@
 $(function(){
   function buildHTML(message){
+    var image_url = (message.image_url !==null)? `<img class="lower-message__image" src="${message.image_url}">`:"";
     console.log(image_url);
     var html = `
+    <div class="message">
+      <div class="upper-message">
+        <div class="upper-message__name">
           ${message.user_name}
         </div>
+        <div class="upper-message__time">
           ${message.created_at}
         </div>
       </div>
+      <div class="bottom-message">
+        <p class="bottom-message__comment">
           ${message.content}
         </p>
         ${image_url}
