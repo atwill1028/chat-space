@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var image_url = (message.image_url !==null)? `<img class="lower-message__image" src="${message.image_url}">`:"";
     var html = `
-    <div class="message">
+    <div class="message" data-id=${message.id}>
       <div class="upper-message">
         <div class="upper-message__name">
           ${message.user_name}
@@ -20,7 +20,32 @@ $(function(){
     </div>`
     return html;
   }
+  setInterval(automaticUpload, 5000)
 
+  function automaticUpload(){
+    var last_message_id = $(".message:last").attr("data-id")
+    if (last_message_id ==null){
+      return false
+    }
+    var url = $("#new_message").attr("action");
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: {
+        id: last_message_id
+      },
+      dataType: 'json'
+    })
+    .done(function(data){
+      for(var i = 0; i<data.length; i++){
+        var html = buildHTML(data[i]);
+        $(".messages").append(html);
+      }
+    })
+    .fail(function(data){
+      alert('error');
+    })
+  }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
