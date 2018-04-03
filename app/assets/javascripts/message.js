@@ -49,6 +49,7 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
+
     var formData = new FormData(this);
     var url = $(this).attr("action");
     $.ajax({
@@ -60,11 +61,14 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      $(".form__submit").attr("disabled",false);
+      if((data.content==null)&&(data.image_url==null)){
+        return false
+      }
       var html = buildHTML(data);
       $(".messages").append(html);
       $(".form__message").val("");
       $(".hidden").val("");
-      $(".form__submit").attr("disabled",false);
       $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
     })
     .fail(function(data){
