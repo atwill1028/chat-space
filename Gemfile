@@ -75,4 +75,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-controller-testing'
 gem 'pry-byebug'
-
